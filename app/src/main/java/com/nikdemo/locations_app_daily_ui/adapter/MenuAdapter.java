@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -47,9 +48,13 @@ public class MenuAdapter extends RecyclerView.Adapter {
             holder.view_selected.setVisibility(View.VISIBLE);
             holder.txt_menu.setTextColor(ContextCompat.getColor(context,R.color.blue));
         } else {
+            holder.txt_menu.setTextColor(ContextCompat.getColor(context,android.R.color.darker_gray));
             holder.view_selected.setVisibility(View.INVISIBLE);
         }
-
+        holder.ll_main.setOnClickListener(v->{
+            selectedItem = position;
+            notifyDataSetChanged();
+        });
     }
 
     @Override
@@ -70,10 +75,12 @@ public class MenuAdapter extends RecyclerView.Adapter {
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView txt_menu;
         View view_selected;
+        LinearLayout ll_main;
         public MyViewHolder(View itemView) {
             super(itemView);
             txt_menu = itemView.findViewById(R.id.txt_menu);
             view_selected = itemView.findViewById(R.id.view_selected);
+            ll_main = itemView.findViewById(R.id.ll_main);
 
         }
     }
