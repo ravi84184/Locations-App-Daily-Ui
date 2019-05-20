@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/ll_main"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="@dimen/_5sdp"
+        app:cardUseCompatPadding="true"
+        app:cardPreventCornerOverlap="false">
+
+        <ImageView
+            android:src="@drawable/f"
+            android:scaleType="centerCrop"
+            android:id="@+id/feed_img"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp" />
+
+    </android.support.v7.widget.CardView>
+
+    <RelativeLayout
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/feed_title"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:text="Title of the feed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textSize="@dimen/_10ssp"
+                android:layout_below="@+id/feed_title"
+                android:id="@+id/feed_description"
+                android:text="Title of the feed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+
+        <android.support.v7.widget.CardView
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardPreventCornerOverlap="true"
+            app:cardElevation="@dimen/_5sdp"
+            app:cardCornerRadius="@dimen/_6sdp"
+            app:cardUseCompatPadding="true">
+            <TextView
+                android:padding="@dimen/_5sdp"
+                android:id="@+id/feed_date"
+                android:textAlignment="center"
+                android:text="18 \n Aug"
+                android:maxLines="2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </android.support.v7.widget.CardView>
+    </RelativeLayout>
+
+</LinearLayout>
